@@ -22,4 +22,9 @@ Set `External Script Editor Args` to:
 $(File) $(Line)
 ```
 
-When double-clicking logs in the console
+When double-clicking logs in the console, that file will be opened in
+any existing neovim editor that has the current working directory (`echo getcwd()`)
+set to the relevant Unity project.
+
+If no relevant editor is found, a new neovide instance will be created.
+Its servername will be located in the /Temp/ directory of the Unity project.
