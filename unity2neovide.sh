@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 echo "Running nvim attachment script..."
+# This is similar to the unity2neovim script, but it uses neovide as a frontend and provides automatic focus switching.
+# If no relevant editor is found, a new neovide instance will be created.
+# Its servername will be located in the /Temp/ directory of the Unity project.
+
+# Dependencies
+# - `neovim-remote`
+# - `wmctrl` (for focus-switching)
+# - `neovide` (as a convenient GUI nvim wrapper)
 
 USER_ID=$(id -u)
 RUN_PATH="/run/user/$USER_ID/"
