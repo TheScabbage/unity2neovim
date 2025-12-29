@@ -24,10 +24,12 @@ for socket in ${XDG_RUNTIME_DIR:-/run/user/$UID}/nvim.*.0; do
 
     if [[ "$CWD" == "$PROJECT_DIR"* ]]; then
         nvim --server "$socket" --remote-send "<ESC>:e $FILE<CR>:$LINE<CR>$COLUMN|"
+
+        # Focus the terminal.
+        # I always have ghostty on desktop 0, so use `wmctrl` to switch to it:
+        wmctrl -s 0
+
         exit 0
     fi
 done
 
-# Focus the terminal.
-# I always have ghostty on desktop 0, so use `wmctrl` to switch to it:
-wmctrl -s 0
