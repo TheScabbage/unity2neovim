@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # This script can be used to click on Unity error logs and open them in a running neovim instance.
 # It searches /run/user/$UID/ for any neovim sockets that are open in the project directory.
 # The first nvim instance to be found will be sent to the file/line/column of the error.
