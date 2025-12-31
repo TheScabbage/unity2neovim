@@ -13,7 +13,7 @@ LINE="$2"
 COLUMN="$3"
 
 # Unity runs this from the project directory
-PROJECT_DIR="$(pwd)"
+PROJECT_DIR="$(pwd -P)"
 
 # Find nvim instances and check their working directory
 for socket in ${XDG_RUNTIME_DIR:-/run/user/$UID}/nvim.*.0; do
@@ -33,3 +33,5 @@ for socket in ${XDG_RUNTIME_DIR:-/run/user/$UID}/nvim.*.0; do
     fi
 done
 
+
+echo "No neovim instance found in project '$PROJECT_DIR'"
